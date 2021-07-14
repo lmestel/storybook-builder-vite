@@ -14,14 +14,15 @@ module.exports.createViteServer = async function createViteServer(
         configFile: false,
         root,
         server: {
+            force: true,
             middlewareMode: true,
             hmr: {
                 port,
                 server: devServer,
             },
-            fsServe: {
-                strict: true
-            }
+            fs: {
+                strict: true,
+            },
         },
         resolve: {
             alias: {
